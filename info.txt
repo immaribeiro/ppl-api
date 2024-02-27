@@ -1,0 +1,26 @@
+Supported Models
+
+Perplexity Models
+
+Model	            Parameter Count	Context Length	Model Type
+sonar-small-chat	7B	      16384	Chat    Completion
+sonar-small-online	7B	      12000	Chat    Completion
+sonar-medium-chat	8x7B	  16384	Chat    Completion
+sonar-medium-online	8x7B	  12000	Chat    Completion
+
+Open-Source Models
+Where possible, we try to match the Hugging Face implementation.
+
+Model	                Parameter Count	Context Length	Model Type
+codellama-70b-instruct	70B	      16384	Chat    Completion
+mistral-7b-instruct [1]	7B	      16384	Chat    Completion
+mixtral-8x7b-instruct	8x7B	  16384	Chat    Completion
+
+
+[1] This model refers to the v0.2 release of mistral-7b-instruct.
+
+Special Tokens
+We do not raise any exceptions if your chat inputs contain messages with special tokens. If avoiding prompt injections is a concern for your use case, it is recommended that you check for special tokens prior to calling the API. For more details, read Meta's recommendations for Llama.
+
+Online LLMs
+It is recommended to use only single-turn conversations and avoid system prompts for the online LLMs (sonar-1-small-online and sonar-1-medium-online).
